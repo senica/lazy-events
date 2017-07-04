@@ -190,4 +190,25 @@ describe('Test Lazy Events', ()=>{
     }
   })
 
+  it('* Asterisk Event.', async (done)=>{
+    try{
+      let { window } = await jsdom(``, [])
+
+      // bind events
+      window.LazyEvents(window);
+
+      // All event passes in label first.
+      window.on('*', (label, value)=>{
+        assert(label, 'one')
+        assert(value, true);
+        done();
+      })
+      window.emit('one', true)
+
+
+    }catch(e){
+      done(e)
+    }
+  })
+
 })
