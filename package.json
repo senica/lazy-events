@@ -1,0 +1,26 @@
+{
+  "name": "lazy-events",
+  "version": "1.0.0",
+  "description": "Super simple events, with lazy triggering. Meaning, events may be setup in such that they will called even if registered after their handler has been triggered. This is very useful for dynamic front-end apps where there may be race-conditions.",
+  "main": "lazy-events.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senica/lazy-events.git"
+  },
+  "keywords": [
+    "events",
+    "browser",
+    "events",
+    "lazy",
+    "events"
+  ],
+  "author": "Senica Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/senica/lazy-events/issues"
+  },
+  "homepage": "https://github.com/senica/lazy-events#readme"
+}
