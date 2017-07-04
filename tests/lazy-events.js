@@ -221,4 +221,14 @@ describe('Test Lazy Events', ()=>{
     lazy.emit('module.exports', true)
   })
 
+  it('module.exports from git', (done)=>{
+    let lazy = require('../')({})
+
+    lazy.on('module.exports', (value)=>{
+      assert(value, true);
+      done();
+    })
+    lazy.emit('module.exports', true)
+  })
+
 })

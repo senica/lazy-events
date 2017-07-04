@@ -40,10 +40,13 @@ window.LazyEvents(target2);
 
 Sorry, haven't added to npm repo yet. Let me know if it will be helpful to you.
 
-Add `lazy-events.min.js` to your project.
+Add to your project.
+```bash
+npm install https://github.com/senica/lazy-events.git --save
+```
 
 ```js
-let lazy = require('./lazy-events.min.js')({}) // <-- or bind to some other object.
+let lazy = require('lazy-events')({}) // <-- or bind to some other object.
 lazy.on('some-event', (value)=>{
   console.log('Yay!', value)
 })
