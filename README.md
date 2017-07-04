@@ -3,10 +3,14 @@ LazyEvents - Super Simple Events with Lazy Handling.
 
 *NOTE* This only works with ES6 browsers.
 
-***Minified is 980 bytes***
+***Minified is 1082 bytes***
 
 Usage
 -----
+
+#### Browser
+
+Sorry, haven't added to bower repo yet. Let me know if it will be helpful to you.
 
 Add `lazy-events.min.js` to your project.
 
@@ -30,6 +34,20 @@ let target = window.LazyEvents({});
 // And another...
 let target2 = {};
 window.LazyEvents(target2);
+```
+
+#### NodeJs
+
+Sorry, haven't added to npm repo yet. Let me know if it will be helpful to you.
+
+Add `lazy-events.min.js` to your project.
+
+```js
+let lazy = require('./lazy-events.min.js')({}) // <-- or bind to some other object.
+lazy.on('some-event', (value)=>{
+  console.log('Yay!', value)
+})
+lazy.emit('some-event', 'Hi.');
 ```
 
 ## API
