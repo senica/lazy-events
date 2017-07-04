@@ -159,7 +159,7 @@ npm install
 
 Run the build script:
 ```bash
-npm build
+npm run build
 ```
 The built version of LazyEvents will be put in the `dist/` subdirectory, along with the minified copy and associated map file.
 

@@ -4,7 +4,8 @@
   "description": "Super simple events, with lazy triggering. Meaning, events may be setup in such that they will called even if registered after their handler has been triggered. This is very useful for dynamic front-end apps where there may be race-conditions.",
   "main": "lazy-events.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --trace-warnings --harmony test.js"
+    "test": "./node_modules/.bin/mocha --trace-warnings --harmony test.js",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "dependencies": {
     "jsdom": "^11.1.0",
     "minimist": "^1.2.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "uglify-es": "^3.0.23"
   }
 }
