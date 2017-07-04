@@ -3,6 +3,8 @@ LazyEvents - Super Simple Events with Lazy Handling.
 
 *NOTE* This only works with ES6 browsers.
 
+***Minified is 980 bytes***
+
 Usage
 -----
 

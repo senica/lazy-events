@@ -1,4 +1,4 @@
-(function(root){
+(function(){
 
   function LazyEvents(target = {}){
 
@@ -126,9 +126,13 @@
     return target;
   }
 
-  Object.defineProperty(root, 'LazyEvents', {
-    get: ()=>{
-      return LazyEvents
-    }
-  })
-})(window)
+  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = LazyEvents;
+  }else if(typeof define === 'function' && define.amd) {
+    define([], function() {
+      return LazyEvents;
+    });
+  }else{
+    window.LazyEvents = LazyEvents;
+  }
+})()
