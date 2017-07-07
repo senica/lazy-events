@@ -190,6 +190,63 @@ describe('Test Lazy Events', ()=>{
     }
   })
 
+  it('One with asterisk', async (done)=>{
+    try{
+      let { window } = await jsdom(``, [])
+
+      // bind events
+      window.LazyEvents(window);
+
+      let value = 0;
+
+      let timer = null;
+      window.one('*', (label, incoming)=>{
+        value++;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+          assert(value, 1);
+          assert(incoming, true);
+          assert(label, 'one')
+          done()
+        }, 100)
+      })
+      window.emit('one', true)
+      window.emit('one', true) // does not do anything. event was removed.
+      window.emit('one', true) // does not do anything. event was removed.
+
+    }catch(e){
+      done(e)
+    }
+  })
+
+  it('One with labels and value', async (done)=>{
+    try{
+      let { window } = await jsdom(``, [])
+
+      // bind events
+      window.LazyEvents(window);
+
+      let value = 0;
+
+      let timer = null;
+      window.one('one', (incoming)=>{
+        value++;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+          assert(value, 1);
+          assert(incoming, true);
+          done()
+        }, 100)
+      })
+      window.emit('one', true)
+      window.emit('one', true) // does not do anything. event was removed.
+      window.emit('one', true) // does not do anything. event was removed.
+
+    }catch(e){
+      done(e)
+    }
+  })
+
   it('* Asterisk Event.', async (done)=>{
     try{
       let { window } = await jsdom(``, [])

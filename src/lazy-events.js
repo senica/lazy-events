@@ -57,7 +57,7 @@
      * Same as On, but will immediately remove itself once it has resolved once.
      */
     function one(label, cb, lazy = true){
-      let _cb = ()=>{
+      let _cb = function(){ // do not use double arrow here, it messes up arguments
         let args = Array.from(arguments);
         cb.apply(target, args)
         off(label, _cb);
@@ -117,7 +117,8 @@
 
       if(typeof events['*'] !== 'undefined'){
         events['*'].forEach((event)=>{
-          event.apply(target, [].concat(label, events[label].__args__))
+          let args = [].concat(label, events[label].__args__);
+          event.apply(target, args);
         })
       }
       return target;
